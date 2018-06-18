@@ -39,7 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'hello.apps.HelloConfig',
     'accounts',
-    # 'django_forms_bootstrap',
+    'django_forms_bootstrap',
 ]
 
 MIDDLEWARE = [
@@ -128,3 +128,7 @@ AUTHENTICATION_BACKENDS = (
     'django.contrib.auth.backends.ModelBackend',
     'accounts.backends.EmailAuth',
 )
+
+# Stripe environment variables
+STRIPE_PUBLISHABLE = os.getenv('STRIPE_PUBLISHABLE', 'pk_test_885X468DxydG8MCPq6EY75No')
+STRIPE_SECRET = os.getenv('STRIPE_SECRET', 'sk_test_mtybmD0pemBDEkJ7hszbiLNF')
